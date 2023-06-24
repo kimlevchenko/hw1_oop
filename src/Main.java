@@ -1,24 +1,28 @@
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args) {
+        Random random = new Random();
+
         Gryffindor[] gryffindors = {
-                new Gryffindor("Гарри Поттер", "Гриффиндор", 100, 50, 80, 90, 60),
-                new Gryffindor("Гермиона Грейнджер", "Гриффиндор", 60, 30, 70, 95, 55),
-                new Gryffindor("Рон Уизли", "Гриффиндор", 35, 40, 50, 40, 45),
+                new Gryffindor("Гарри Поттер", "Гриффиндор", random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101)),
+                new Gryffindor("Гермиона Грейнджер", "Гриффиндор", random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101)),
+                new Gryffindor("Рон Уизли", "Гриффиндор", random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101)),
         };
         Hufflepuff[] hufflepuffs = {
-                new Hufflepuff("Захария Смит", "Пуффендуй", 60, 70, 50, 80, 70),
-                new Hufflepuff("Седрик Диггори", "Пуффендуй", 55, 40, 70, 35, 60),
-                new Hufflepuff("Джастин Финч-Флетчли", "Пуффендуй", 45, 40, 60, 45, 45),
+                new Hufflepuff("Захария Смит", "Пуффендуй", random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101)),
+                new Hufflepuff("Седрик Диггори", "Пуффендуй", random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101)),
+                new Hufflepuff("Джастин Финч-Флетчли", "Пуффендуй", random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101)),
         };
         Ravenclaw[] ravenclaws = {
-                new Ravenclaw("Чжоу Чанг", "Когтевран", 70, 70, 80, 75, 50, 30),
-                new Ravenclaw("Падма Патил", "Когтевран", 50, 70, 45, 95, 55, 20),
-                new Ravenclaw("Маркус Белби", "Когтевран", 55, 45, 55, 45, 55, 65),
+                new Ravenclaw("Чжоу Чанг", "Когтевран", random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101)),
+                new Ravenclaw("Падма Патил", "Когтевран", random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101)),
+                new Ravenclaw("Маркус Белби", "Когтевран", random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101)),
         };
         Slytherin[] slytherins = {
-                new Slytherin("Драко Малфой", "Слизерин", 80, 30, 80, 70, 90, 50, 75),
-                new Slytherin("Грэхэм Монтегю", "Слизерин", 60, 30, 70, 95, 25, 20, 15),
-                new Slytherin("Грегори Гойл", "Слизерин", 35, 40, 50, 40, 15, 60, 30),
+                new Slytherin("Драко Малфой", "Слизерин", random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101)),
+                new Slytherin("Грэхэм Монтегю", "Слизерин", random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101)),
+                new Slytherin("Грегори Гойл", "Слизерин", random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101)),
         };
 
         PrintStudents printStudents = new PrintStudents();
@@ -27,5 +31,12 @@ public class Main {
         printStudents.print(ravenclaws);
         printStudents.print(slytherins);
 
+        gryffindors[1].compare(gryffindors[2]);
+        hufflepuffs[1].compare(hufflepuffs[2]);
+        ravenclaws[1].compare(ravenclaws[2]);
+        slytherins[1].compare(slytherins[2]);
+
+        System.out.println();
+        gryffindors[0].compare(slytherins[0]);
     }
 }

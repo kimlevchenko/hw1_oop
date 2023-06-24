@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Slytherin extends Hogwarts {
     private int cunning;
     private int resolve;
@@ -52,5 +54,31 @@ public class Slytherin extends Hogwarts {
 
     public void setAuthority(int authority) {
         this.authority = authority;
+    }
+
+    public int sum() {
+        return cunning + resolve + ambition + resourcefulness + authority;
+    }
+
+    public void compare(Slytherin other) {
+        if (sum() > other.sum()) {
+            System.out.println(getName() + " лучший Слизеринец, чем " + other.getName());
+        } else {
+            System.out.println(other.getName() + " лучший Слизеринец, чем " + getName());
+        }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Slytherin slytherin = (Slytherin) o;
+        return cunning == slytherin.cunning && resolve == slytherin.resolve && ambition == slytherin.ambition && resourcefulness == slytherin.resourcefulness && authority == slytherin.authority;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), cunning, resolve, ambition, resourcefulness, authority);
     }
 }

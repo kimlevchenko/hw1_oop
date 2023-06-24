@@ -5,6 +5,7 @@ public class PrintStudents {
             Gryffindor gryffindor = gryffindors[i];
             System.out.println("Имя: " + gryffindor.getName()
                     + "; Факультет: " + gryffindor.getFaculty()
+                    + "; Сила магии: " + gryffindor.getPower()
                     + "; Трансгрессия: " + gryffindor.getTransgress()
                     + "; Благородство: " + gryffindor.getNobility()
                     + "; Честь: " + gryffindor.getHonor()
@@ -18,6 +19,7 @@ public class PrintStudents {
             Hufflepuff hufflepuff = hufflepuffs[i];
             System.out.println("Имя: " + hufflepuff.getName()
                     + "; Факультет: " + hufflepuff.getFaculty()
+                    + "; Сила магии: " + hufflepuff.getPower()
                     + "; Трансгрессия: " + hufflepuff.getTransgress()
                     + "; Трудолюбие: " + hufflepuff.getIndustriousness()
                     + "; Верность: " + hufflepuff.getLoyalty()
@@ -31,6 +33,7 @@ public class PrintStudents {
             Ravenclaw ravenclaw = ravenclaws[i];
             System.out.println("Имя: " + ravenclaw.getName()
                     + "; Факультет: " + ravenclaw.getFaculty()
+                    + "; Сила магии: " + ravenclaw.getPower()
                     + "; Трансгрессия: " + ravenclaw.getTransgress()
                     + "; Ум: " + ravenclaw.getClever()
                     + "; Мудрость: " + ravenclaw.getWisdom()
@@ -45,6 +48,7 @@ public class PrintStudents {
             Slytherin slytherin = slytherins[i];
             System.out.println("Имя: " + slytherin.getName()
                     + "; Факультет: " + slytherin.getFaculty()
+                    + "; Сила магии: " + slytherin.getPower()
                     + "; Трансгрессия: " + slytherin.getTransgress()
                     + "; Хитрость" + slytherin.getCunning()
                     + "; Решительность: " + slytherin.getResolve()
@@ -52,5 +56,6 @@ public class PrintStudents {
                     + "; Находчивость: " + slytherin.getResourcefulness()
                     + "; Жажда власти: " + slytherin.getAuthority());
         }
+        System.out.println();
     }
 }

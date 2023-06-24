@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Ravenclaw extends Hogwarts {
     private int clever;
     private int wisdom;
@@ -42,6 +44,32 @@ public class Ravenclaw extends Hogwarts {
 
     public void setCreation(int creation) {
         this.creation = creation;
+    }
+
+    public int sum() {
+        return clever + wisdom + wit + creation;
+    }
+
+    public void compare(Ravenclaw other) {
+        if (sum() > other.sum()) {
+            System.out.println(getName() + " лучший Когтевранец, чем " + other.getName());
+        } else {
+            System.out.println(other.getName() + " лучший Когтевранец, чем " + getName());
+        }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Ravenclaw ravenclaw = (Ravenclaw) o;
+        return clever == ravenclaw.clever && wisdom == ravenclaw.wisdom && wit == ravenclaw.wit && creation == ravenclaw.creation;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), clever, wisdom, wit, creation);
     }
 }
 
